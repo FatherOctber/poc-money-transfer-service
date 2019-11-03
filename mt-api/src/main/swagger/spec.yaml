@@ -109,7 +109,7 @@ definitions:
       clientUid:
         type: string
       balance:
-        $ref: "#/definitions/Balance"
+        $ref: "#/definitions/Amount"
       status:
         $ref: "#/definitions/AccountStatus"
 
@@ -119,7 +119,7 @@ definitions:
       - active
       - closed
 
-  Balance:
+  Amount:
     type: object
     required:
       - amount
@@ -137,17 +137,13 @@ definitions:
       - sourceAccount
       - targetAccount
       - amount
-      - currency
     properties:
       sourceAccount:
         type: string
       targetAccount:
         type: string
       amount:
-        type: number
-      currency:
-        type: string
-        pattern: "[A-Z]{3}"
+        $ref: "#/definitions/Amount"
 
   ErrorResponse:
     type: object
