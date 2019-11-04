@@ -12,6 +12,8 @@
         <module>mt-persistence</module>
         <module>mt-core</module>
         <module>mt-api</module>
+        <module>mt-transport</module>
+        <module>mt-common</module>
     </modules>
 
     <properties>
@@ -20,6 +22,8 @@
         <jersey.version>2.27</jersey.version>
         <grizzly.version>2.4.4</grizzly.version>
         <jaxrs.version>2.1</jaxrs.version>
+        <active-mq.version>5.15.10</active-mq.version>
+        <reactor.version>3.2.1.RELEASE</reactor.version>
     </properties>
 
     <dependencyManagement>
@@ -113,6 +117,27 @@
                 <artifactId>jersey-media-json-jackson</artifactId>
                 <version>${jersey.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-all</artifactId>
+                <version>${active-mq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq.tooling</groupId>
+                <artifactId>activemq-junit</artifactId>
+                <version>${active-mq.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.projectreactor</groupId>
+                <artifactId>reactor-core</artifactId>
+                <version>${reactor.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>28.1-jre</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -132,6 +157,10 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
         </dependency>
     </dependencies>
 
