@@ -15,4 +15,9 @@ public class FundTransferService {
     public Response transfer(Transaction transaction) {
         return Response.ok().build();
     }
+
+    @GET
+    public Response getTransactionStatus(String transactionId) {
+        return Response.ok().build();
+    }
 }
